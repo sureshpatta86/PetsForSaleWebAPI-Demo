@@ -29,7 +29,8 @@ jobs:
         run: dotnet build ./PetsForSaleWebAPI.sln --configuration Release --no-restore
         
       - name: Publish
-        run: dotnet publish ./PetsForSaleWebAPI.sln --configuration Release --no-build --output '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'           
+        run: dotnet publish ./PetsForSaleWebAPI.sln --configuration Release --no-build --output '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}'  
+        
       - name: Deployment
         uses: azure/webapps-deploy@v2
         with:
